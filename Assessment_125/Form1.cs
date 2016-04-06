@@ -16,5 +16,20 @@ namespace Assessment_125
         {
             InitializeComponent();
         }
+
+        private void Display_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Attack_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Skip_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
