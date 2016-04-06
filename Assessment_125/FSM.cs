@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Finite
+namespace Finite_State_Machine
 {
     /// <summary>
     /// is going from which state it
@@ -16,13 +16,6 @@ namespace Finite
     [Serializable]
     class FSM<T>
     {
-        public class Singleton<S>
-        {
-            private Singleton() { }
-            private S _instance;
-            private S instance;
-        }
-
         class Transition
         {
             public T from;
@@ -35,14 +28,8 @@ namespace Finite
             }
         }
 
-        private List<T> _States;
-        public T _Current;
+        public List<T> _States;
         private Dictionary<T, List<Transition>> transitionTable;
-
-        public T state
-        {
-            get { return _Current; }
-        }
 
         public FSM()
         {
@@ -56,6 +43,7 @@ namespace Finite
             {
                 return false;
             }
+
             else
             {
                 _States.Add(state);

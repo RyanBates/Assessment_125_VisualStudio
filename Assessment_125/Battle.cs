@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Game;
 using Characteristics;
-using Finite;
+using Finite_State_Machine;
 using System.Xml.Serialization;
 
 namespace Fight

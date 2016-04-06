@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Game;
 using Fight;
-using Finite;
+using Finite_State_Machine;
 
 namespace Characteristics
 {
@@ -23,6 +23,21 @@ namespace Characteristics
             int XP { get; set; }
         }
 
+        /// <summary>
+        /// Created a interface which
+        /// they will be able to both heal 
+        /// the team and damage the other units when they 
+        /// learn the magic skill after leveling up.
+        /// </summary>
+        public interface IMagic
+        {
+            int Cure { get; set; }
+            int fire { get; set; }
+            int ice { get; set; }
+            int water { get; set; }
+            int thunder { get; set; }
+        }
+        
         /// <summary>
         /// 
         /// </summary>
