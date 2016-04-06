@@ -13,6 +13,7 @@ namespace Finite
     /// state in the game.
     /// </summary>
     /// <typeparam name="T"></typeparam>
+    [Serializable]
     class FSM<T>
     {
         public class Singleton<S>

@@ -4,7 +4,7 @@ using Game;
 using Fight;
 using Finite;
 
-namespace Characteristics 
+namespace Characteristics
 {
     class Interfaces
     {
@@ -23,11 +23,17 @@ namespace Characteristics
             int XP { get; set; }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public interface IGameManager
         {
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public interface IGroup
         {
 
