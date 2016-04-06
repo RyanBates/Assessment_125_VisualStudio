@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Game;
+using GameManager;
 using Characteristics;
 using Finite_State_Machine;
 using System.Xml.Serialization;
@@ -77,8 +77,8 @@ namespace Fight
     /// them with the stats that are above
     /// while changing them as they level up.
     /// </summary>
-    public class Party : Interfaces.IGroup 
+    public class Party : Interfaces.IGroup
     {
-
+       
     }
 }

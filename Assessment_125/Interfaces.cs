@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Game;
+using GameManager;
 using Fight;
 using Finite_State_Machine;
 
@@ -24,22 +24,9 @@ namespace Characteristics
         }
 
         /// <summary>
-        /// Created a interface which
-        /// they will be able to both heal 
-        /// the team and damage the other units when they 
-        /// learn the magic skill after leveling up.
-        /// </summary>
-        public interface IMagic
-        {
-            int Cure { get; set; }
-            int fire { get; set; }
-            int ice { get; set; }
-            int water { get; set; }
-            int thunder { get; set; }
-        }
-        
-        /// <summary>
-        /// 
+        /// this will take the class GameManager
+        /// and determine when to change the scene 
+        /// as well as when to save the game.
         /// </summary>
         public interface IGameManager
         {
@@ -47,11 +34,17 @@ namespace Characteristics
         }
 
         /// <summary>
-        /// 
+        /// this will create the team 
+        /// and make them with diffrent 
+        /// stats from the unit class
+        /// as well as take from 
+        /// GameManager to tell when they 
+        /// go depending on that units 
+        /// speed.
         /// </summary>
         public interface IGroup
         {
-
+            List<Unit> team { get; set; }
         }
     }
 }
