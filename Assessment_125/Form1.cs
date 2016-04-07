@@ -31,5 +31,15 @@ namespace Assessment_125
         {
 
         }
+
+        private void hTurn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vTurn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

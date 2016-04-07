@@ -45,6 +45,7 @@ namespace Characteristics
         public interface IGroup
         {
             List<Unit> team { get; set; }
+
         }
     }
 }
