@@ -8,6 +8,17 @@ using System.Xml.Serialization;
 namespace Fight
 {
     /// <summary>
+    /// added states for the units
+    ///  to use for their battle.
+    /// </summary>
+    public enum States
+    {
+        init = 0,
+        attack = 1,
+        next = 2
+    }
+
+    /// <summary>
     /// is the class that will 
     /// create all of the 
     /// characters that will be fighting 
@@ -90,6 +101,37 @@ namespace Fight
             {
                 throw new NotImplementedException();
             }
+        }
+
+        public Unit cUnit
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public FSM<States> turn
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public Interfaces.IGroup Attack(Interfaces.IGroup other)
+        {
+            throw new NotImplementedException();
         }
     }
 }

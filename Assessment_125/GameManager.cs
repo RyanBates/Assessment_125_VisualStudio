@@ -13,6 +13,6 @@ namespace GameManager
     /// </summary>
     class GameManager : Interfaces.IGameManager
     {
-
+        
     }
 }

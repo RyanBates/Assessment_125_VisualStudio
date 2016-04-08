@@ -45,7 +45,9 @@ namespace Characteristics
         public interface IGroup
         {
             List<Unit> team { get; set; }
-
+            Unit cUnit { get; set; }            // states the cuurent unit.
+            FSM<States> turn { get; set; }
+            IGroup Attack(IGroup other);
         }
     }
 }

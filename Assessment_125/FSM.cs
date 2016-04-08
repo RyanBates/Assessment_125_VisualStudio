@@ -33,12 +33,6 @@ namespace Finite_State_Machine
 
         }
 
-        public FSM(T state)
-        {
-            _States = new List<T>();
-
-        }
-
         public bool AddState(T state)
         {
             if (_States.Contains(state))
