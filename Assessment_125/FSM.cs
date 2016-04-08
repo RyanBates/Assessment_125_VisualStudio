@@ -26,12 +26,17 @@ namespace Finite_State_Machine
         }
 
         public List<T> _States;
-        private Dictionary<T, List<Transition>> transitionTable;
+        public List<T> transitionTable;
 
         public FSM()
         {
+
+        }
+
+        public FSM(T state)
+        {
             _States = new List<T>();
-            transitionTable = new Dictionary<T, List<Transition>>();
+
         }
 
         public bool AddState(T state)
@@ -44,24 +49,23 @@ namespace Finite_State_Machine
             else
             {
                 _States.Add(state);
-                transitionTable.Add(state, new List<Transition>());
                 return true;
             }
         }
 
         public void AddTrans(T f, T t)
         {
-            if (transitionTable.ContainsKey(f))
+            if (transitionTable.Contains(f))
             {
-                transitionTable[f].Add(new Transition(f, t));
+                transitionTable.Add(f);
             }
         }
 
         public void ChangeTrans(T f, T t)
         {
-            if (transitionTable.ContainsKey(t))
+            if (transitionTable.Contains(t))
             {
-                transitionTable[t].Add(new Transition(f, t));
+                transitionTable.Add(f);
             }
         }
     }

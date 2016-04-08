@@ -79,6 +79,17 @@ namespace Fight
     /// </summary>
     public class Party : Interfaces.IGroup
     {
-       
+        public List<Unit> team
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }
