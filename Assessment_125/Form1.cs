@@ -41,5 +41,15 @@ namespace Assessment_125
         {
 
         }
+
+        private void Stats_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void VStats_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

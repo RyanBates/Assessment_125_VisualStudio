@@ -15,6 +15,7 @@ namespace Fight
     {
         init = 0,
         attack = 1,
+        
         next = 2
     }
 
@@ -90,43 +91,29 @@ namespace Fight
     /// </summary>
     public class Party : Interfaces.IGroup
     {
+        public List<Unit> Team;
+        uint CUnit;
+        FSM<States> turns = new FSM<States>(States.init);
+        
+
         public List<Unit> team
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return Team; }
+            set { Team = value; }
         }
 
         public Unit cUnit
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+           get { return CUnit; }
 
-            set
-            {
-                throw new NotImplementedException();
-            }
+           set { CUnit = value; }
         }
 
         public FSM<States> turn
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get { return turns; }
 
-            set
-            {
-                throw new NotImplementedException();
-            }
+            set { turns = value; }
         }
 
         public Interfaces.IGroup Attack(Interfaces.IGroup other)

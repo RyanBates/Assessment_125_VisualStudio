@@ -28,7 +28,7 @@ namespace Finite_State_Machine
         public List<T> _States;
         public List<T> transitionTable;
 
-        public FSM()
+        public FSM(T state)
         {
 
         }

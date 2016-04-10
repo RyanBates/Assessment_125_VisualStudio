@@ -30,9 +30,10 @@
         {
             this.Display = new System.Windows.Forms.TextBox();
             this.Attack = new System.Windows.Forms.Button();
-            this.Skip = new System.Windows.Forms.Button();
             this.hTurn = new System.Windows.Forms.Label();
             this.vTurn = new System.Windows.Forms.Label();
+            this.Stats = new System.Windows.Forms.Label();
+            this.VStats = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Display
@@ -56,17 +57,6 @@
             this.Attack.UseVisualStyleBackColor = true;
             this.Attack.Click += new System.EventHandler(this.Attack_Click);
             // 
-            // Skip
-            // 
-            this.Skip.Location = new System.Drawing.Point(494, 436);
-            this.Skip.Margin = new System.Windows.Forms.Padding(4);
-            this.Skip.Name = "Skip";
-            this.Skip.Size = new System.Drawing.Size(111, 38);
-            this.Skip.TabIndex = 2;
-            this.Skip.Text = "Skip";
-            this.Skip.UseVisualStyleBackColor = true;
-            this.Skip.Click += new System.EventHandler(this.Skip_Click);
-            // 
             // hTurn
             // 
             this.hTurn.AutoSize = true;
@@ -89,14 +79,37 @@
             this.vTurn.Text = "Villain:";
             this.vTurn.Click += new System.EventHandler(this.vTurn_Click);
             // 
+            // Stats
+            // 
+            this.Stats.AutoSize = true;
+            this.Stats.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.Stats.Location = new System.Drawing.Point(59, 447);
+            this.Stats.Name = "Stats";
+            this.Stats.Size = new System.Drawing.Size(44, 17);
+            this.Stats.TabIndex = 5;
+            this.Stats.Text = "Stats:";
+            this.Stats.Click += new System.EventHandler(this.Stats_Click);
+            // 
+            // VStats
+            // 
+            this.VStats.AutoSize = true;
+            this.VStats.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.VStats.Location = new System.Drawing.Point(942, 447);
+            this.VStats.Name = "VStats";
+            this.VStats.Size = new System.Drawing.Size(44, 17);
+            this.VStats.TabIndex = 6;
+            this.VStats.Text = "Stats:";
+            this.VStats.Click += new System.EventHandler(this.VStats_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1289, 575);
+            this.Controls.Add(this.VStats);
+            this.Controls.Add(this.Stats);
             this.Controls.Add(this.vTurn);
             this.Controls.Add(this.hTurn);
-            this.Controls.Add(this.Skip);
             this.Controls.Add(this.Attack);
             this.Controls.Add(this.Display);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -111,9 +124,10 @@
 
         private System.Windows.Forms.TextBox Display;
         private System.Windows.Forms.Button Attack;
-        private System.Windows.Forms.Button Skip;
         private System.Windows.Forms.Label hTurn;
         private System.Windows.Forms.Label vTurn;
+        private System.Windows.Forms.Label Stats;
+        private System.Windows.Forms.Label VStats;
     }
 }
 

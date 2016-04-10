@@ -30,7 +30,11 @@ namespace Characteristics
         /// </summary>
         public interface IGameManager
         {
-
+            Party Hero { get; set; }
+            Party Villian { get; set; }
+            Party CreateParty(Party create, string type);
+            States ChangeStation(); 
+            IGameManager GameControl(); 
         }
 
         /// <summary>
