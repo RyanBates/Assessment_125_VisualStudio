@@ -13,10 +13,9 @@ namespace Fight
     /// </summary>
     public enum States
     {
-        init = 0,
-        attack = 1,
-        
-        next = 2
+        init,
+        attack,
+        wait
     }
 
     /// <summary>
@@ -25,7 +24,7 @@ namespace Fight
     /// characters that will be fighting 
     /// in the game.
     /// </summary>
-    public class Unit : Interfaces.IStats
+    public class Unit : IStats
     {
         private string m_Name;
         private int m_HP;
@@ -89,12 +88,10 @@ namespace Fight
     /// them with the stats that are above
     /// while changing them as they level up.
     /// </summary>
-    public class Party : Interfaces.IGroup
+    public class Party : IGroup
     {
         public List<Unit> Team;
-        uint CUnit;
-        FSM<States> turns = new FSM<States>(States.init);
-        
+        Unit CUnit;
 
         public List<Unit> team
         {
@@ -109,14 +106,7 @@ namespace Fight
            set { CUnit = value; }
         }
 
-        public FSM<States> turn
-        {
-            get { return turns; }
-
-            set { turns = value; }
-        }
-
-        public Interfaces.IGroup Attack(Interfaces.IGroup other)
+        public IGroup Attack(IGroup other)
         {
             throw new NotImplementedException();
         }

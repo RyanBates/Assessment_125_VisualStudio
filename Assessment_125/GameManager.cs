@@ -12,32 +12,23 @@ namespace GameManager
     /// will attack and when to switch the 
     /// changes.
     /// </summary>
-    class GameManager : Interfaces.IGameManager
+    [Serializable]
+    [XmlSerializerAssembly]
+    public class GameManager : IGameManager
     {
+        private Party m_hero;
+        private Party m_villian;
+
         public Party Hero
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return m_hero; }
+            set { m_hero = value; }
         }
 
         public Party Villian
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return m_villian; }
+            set { m_villian = value; }
         }
 
         public Party CreateParty(Party create, string type)
@@ -45,12 +36,12 @@ namespace GameManager
             throw new NotImplementedException();
         }
 
-        public Interfaces.IGameManager GameControl()
+        public States ChangeStation()
         {
             throw new NotImplementedException();
         }
 
-        public States ChangeStation()
+        GameManager IGameManager.GameControl()
         {
             throw new NotImplementedException();
         }
