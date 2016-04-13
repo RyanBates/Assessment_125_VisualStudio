@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using GameManager;
 using Fight;
-using Finite_State_Machine;
+
 
 namespace Characteristics
 {
@@ -28,8 +27,6 @@ namespace Characteristics
     /// </summary>
     public interface IGameManager
     {
-        Party Hero { get; set; }
-        Party Villian { get; set; }
         Party CreateParty(Party create, string type);
         States ChangeStation();
         GameManager.GameManager GameControl();

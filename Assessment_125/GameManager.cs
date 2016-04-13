@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Xml.Serialization;
 using Characteristics;
 using Fight;
@@ -14,21 +13,16 @@ namespace GameManager
     /// </summary>
     [Serializable]
     [XmlSerializerAssembly]
-    public class GameManager : IGameManager
+    public class GameManager : Unit, IGameManager
     {
-        private Party m_hero;
-        private Party m_villian;
-
-        public Party Hero
+        Unit Hero(string n, int h, int a, int s, int l, int xp)
         {
-            get { return m_hero; }
-            set { m_hero = value; }
+
         }
 
-        public Party Villian
+        Unit Villian(string n, int h, int a, int s, int l, int xp)
         {
-            get { return m_villian; }
-            set { m_villian = value; }
+
         }
 
         public Party CreateParty(Party create, string type)
@@ -45,5 +39,13 @@ namespace GameManager
         {
             throw new NotImplementedException();
         }
+
+        void main()
+        {
+
+        }
     }
+
+
+
 }

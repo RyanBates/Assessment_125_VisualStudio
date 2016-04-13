@@ -62,11 +62,11 @@ namespace Fight
             get { return m_Level; }
             set { m_Level = value; }
         }
-        
+
         public int XP
         {
-           get { return m_XP; }
-           set { m_XP = value; }
+            get { return m_XP; }
+            set { m_XP = value; }
         }
 
         public Unit(string n, int hp, int ap, int s, int l, int xp)
