@@ -24,6 +24,7 @@ namespace Fight
     /// characters that will be fighting 
     /// in the game.
     /// </summary>
+    [Serializable]
     public class Unit : IStats
     {
         private string m_Name;
@@ -78,6 +79,8 @@ namespace Fight
             m_Level = l;
             m_XP = xp;
         }
+
+        public Unit() { }
     }
 
     /// <summary>
@@ -104,6 +107,11 @@ namespace Fight
            get { return CUnit; }
 
            set { CUnit = value; }
+        }
+
+        Party()
+        {
+            
         }
 
         public IGroup Attack(IGroup other)

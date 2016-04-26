@@ -7,19 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Fight;
+using GameManager;
 
 namespace Assessment_125
 {
     public partial class Form1 : Form
     {
+        SaveLoad<Unit> _SaveLoad = new SaveLoad<Unit>();
+        Unit currentUser;
+
         public Form1()
         {
             InitializeComponent();
+            currentUser = new Unit("Ryan", 100, 100, 50, 1, 0);
         }
-
+        
         private void Display_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void Attack_Click(object sender, EventArgs e)
@@ -48,6 +54,27 @@ namespace Assessment_125
         }
 
         private void VStats_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Save_Click(object sender, EventArgs e)
+        {
+            _SaveLoad.Serialize("UserInfo", currentUser);
+        }
+
+        private void Load_Click(object sender, EventArgs e)
+        {
+            currentUser = _SaveLoad.Deserialize("UserInfo");
+            
+        }
+
+        private void New_Game_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Block_Click(object sender, EventArgs e)
         {
 
         }

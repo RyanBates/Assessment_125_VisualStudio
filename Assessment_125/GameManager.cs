@@ -3,6 +3,7 @@ using System.Xml.Serialization;
 using Characteristics;
 using Fight;
 using Finite_State_Machine;
+using System.IO;
 
 namespace GameManager
 {
@@ -29,13 +30,37 @@ namespace GameManager
         {
             throw new NotImplementedException();
         }
-
+        
         void main()
         {
 
         }
     }
 
+    public class SaveLoad<T>
+    {
+        public SaveLoad() { }
 
+        public void Serialize(string s, T t)
+        {
+            using (FileStream fs = File.Create(@"..\SavedFiles\" + s + ".xml"))
+            {
+                XmlSerializer serializser = new XmlSerializer(typeof(T));
+                serializser.Serialize(fs, t);
+            }
+        }
+
+        public T Deserialize(string s)
+        {
+            T t;
+            using (FileStream fs = File.OpenRead(@"..\SavedFiles\" + s + ".xml"))
+            {
+                XmlSerializer deserializer = new XmlSerializer(typeof(T));
+                t = (T)deserializer.Deserialize(fs);
+                fs.Close();
+            }
+            return t;
+        }
+    }
 
 }

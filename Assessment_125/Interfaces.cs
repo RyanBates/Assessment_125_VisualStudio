@@ -24,7 +24,7 @@ namespace Characteristics
     /// this will take the class GameManager
     /// and determine when to change the scene 
     /// as well as when to save the game.
-    /// </summary>
+    /// </summary> 
     public interface IGameManager
     {
         Party CreateParty(Party create, string type);
