@@ -51,15 +51,7 @@ namespace Finite_State_Machine
         {
             if (transitionTable.Contains(f))
             {
-                transitionTable.Add(f);
-            }
-        }
-
-        public void ChangeTrans(T f, T t)
-        {
-            if (transitionTable.Contains(t))
-            {
-                transitionTable.Add(f);
+                transitionTable.Add(t);
             }
         }
     }

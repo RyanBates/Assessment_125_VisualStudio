@@ -13,18 +13,8 @@ namespace GameManager
     /// </summary>
     [Serializable]
     [XmlSerializerAssembly]
-    public class GameManager : Unit, IGameManager
-    {
-        Unit Hero(string n, int h, int a, int s, int l, int xp)
-        {
-
-        }
-
-        Unit Villian(string n, int h, int a, int s, int l, int xp)
-        {
-
-        }
-
+    public class GameManager :  IGameManager
+    { 
         public Party CreateParty(Party create, string type)
         {
             throw new NotImplementedException();
