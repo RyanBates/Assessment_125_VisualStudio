@@ -9,39 +9,27 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Fight;
 using GameManager;
+using System.Xml.Serialization;
+using System.IO;
 
 namespace Assessment_125
 {
+    [Serializable]
+    [XmlSerializerAssembly]
     public partial class Form1 : Form
     {
         SaveLoad<Unit> _SaveLoad = new SaveLoad<Unit>();
         Unit currentUser;
-        GameManager.GameManager game = GameManager.GameManager.stage;
-        List<Unit> stats = new List<Unit>();
 
         public Form1()
         {
             InitializeComponent();
             currentUser = new Unit("Ryan", 100, 100, 50, 1, 0);
-
-            foreach (Unit u in game) // is going to show the unit that i just created.
-            {
-                if (stats.Contains(u))
-                {
-                    stats.Remove(u);
-                }
-                stats.Add(u);
-            }
         }
 
         private void Display_TextChanged(object sender, EventArgs e) // will show what is happening durring the game 
         {
             
-        }
-
-        private void Attack_Click(object sender, EventArgs e) //going to be the button that will tell the users character to attack.
-        {
-
         }
 
         private void Stats_Click(object sender, EventArgs e) // will show the stats of the hero on screen.
@@ -62,12 +50,29 @@ namespace Assessment_125
         private void Load_Click(object sender, EventArgs e) // loads a previous game
         {
             currentUser = _SaveLoad.Deserialize("UserInfo");
-            
+            UpdateDisplay();
+        }
+
+        private void Attack_Click(object sender, EventArgs e) //going to be the button that will tell the users character to attack.
+        {
+            UpdateDisplay();
+            Display.Text = (currentUser.Health-5).ToString();           
         }
 
         private void New_Game_Click(object sender, EventArgs e) // will allow the user to create a new game
-        {
+        { 
+            currentUser = new Unit("Ryan", 100, 100, 50, 1, 0);
+            UpdateDisplay();           
+        }
 
+        private void UpdateDisplay()
+        {
+            Display.Text += currentUser.Name + Environment.NewLine +
+                currentUser.Health + Environment.NewLine +
+                currentUser.Attack + Environment.NewLine +
+                currentUser.Speed + Environment.NewLine +
+                currentUser.Level + Environment.NewLine +
+                currentUser.XP;
         }
     }
 }

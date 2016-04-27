@@ -16,16 +16,6 @@ namespace GameManager
     [XmlSerializerAssembly]
     public class GameManager :  IGameManager
     {
-        static private GameManager _stage;
-        static public GameManager stage
-        {
-            get
-            {
-                if (_stage == null)
-                    _stage = new GameManager();
-                return _stage;
-            }
-        }
 
         public Party CreateParty(Party create, string type)
         {
@@ -54,7 +44,7 @@ namespace GameManager
 
         public void Serialize(string s, T t)
         {
-            using (FileStream fs = File.Create(@"..\SavedFiles\" + s + ".xml"))
+            using (FileStream fs = File.Create(Directory.GetCurrentDirectory() + "/" + s + ".xml"))
             {
                 XmlSerializer serializser = new XmlSerializer(typeof(T));
                 serializser.Serialize(fs, t);
@@ -64,7 +54,7 @@ namespace GameManager
         public T Deserialize(string s)
         {
             T t;
-            using (FileStream fs = File.OpenRead(@"..\SavedFiles\" + s + ".xml"))
+            using (FileStream fs = File.OpenRead(Directory.GetCurrentDirectory() + "/" + s + ".xml"))
             {
                 XmlSerializer deserializer = new XmlSerializer(typeof(T));
                 t = (T)deserializer.Deserialize(fs);
@@ -73,5 +63,4 @@ namespace GameManager
             return t;
         }
     }
-
 }

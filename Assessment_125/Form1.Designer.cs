@@ -30,8 +30,6 @@
         {
             this.Display = new System.Windows.Forms.TextBox();
             this.Attack = new System.Windows.Forms.Button();
-            this.hTurn = new System.Windows.Forms.Label();
-            this.vTurn = new System.Windows.Forms.Label();
             this.Stats = new System.Windows.Forms.Label();
             this.VStats = new System.Windows.Forms.Label();
             this.Save = new System.Windows.Forms.Button();
@@ -41,48 +39,31 @@
             // 
             // Display
             // 
-            this.Display.Location = new System.Drawing.Point(16, 15);
-            this.Display.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Display.Location = new System.Drawing.Point(12, 12);
             this.Display.Multiline = true;
             this.Display.Name = "Display";
-            this.Display.Size = new System.Drawing.Size(1256, 275);
+            this.Display.Size = new System.Drawing.Size(943, 224);
             this.Display.TabIndex = 0;
             this.Display.TextChanged += new System.EventHandler(this.Display_TextChanged);
             // 
             // Attack
             // 
-            this.Attack.Location = new System.Drawing.Point(245, 389);
-            this.Attack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Attack.Location = new System.Drawing.Point(184, 316);
             this.Attack.Name = "Attack";
-            this.Attack.Size = new System.Drawing.Size(111, 38);
+            this.Attack.Size = new System.Drawing.Size(83, 31);
             this.Attack.TabIndex = 1;
             this.Attack.Text = "Attack";
             this.Attack.UseVisualStyleBackColor = true;
             this.Attack.Click += new System.EventHandler(this.Attack_Click);
             // 
-            // hTurn
-            // 
-            this.hTurn.Location = new System.Drawing.Point(0, 0);
-            this.hTurn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.hTurn.Name = "hTurn";
-            this.hTurn.Size = new System.Drawing.Size(133, 28);
-            this.hTurn.TabIndex = 12;
-            // 
-            // vTurn
-            // 
-            this.vTurn.Location = new System.Drawing.Point(0, 0);
-            this.vTurn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.vTurn.Name = "vTurn";
-            this.vTurn.Size = new System.Drawing.Size(133, 28);
-            this.vTurn.TabIndex = 11;
-            // 
             // Stats
             // 
             this.Stats.AutoSize = true;
             this.Stats.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.Stats.Location = new System.Drawing.Point(59, 447);
+            this.Stats.Location = new System.Drawing.Point(44, 363);
+            this.Stats.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Stats.Name = "Stats";
-            this.Stats.Size = new System.Drawing.Size(44, 17);
+            this.Stats.Size = new System.Drawing.Size(34, 13);
             this.Stats.TabIndex = 5;
             this.Stats.Text = "Stats:";
             this.Stats.Click += new System.EventHandler(this.Stats_Click);
@@ -91,19 +72,19 @@
             // 
             this.VStats.AutoSize = true;
             this.VStats.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.VStats.Location = new System.Drawing.Point(941, 447);
+            this.VStats.Location = new System.Drawing.Point(706, 363);
+            this.VStats.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.VStats.Name = "VStats";
-            this.VStats.Size = new System.Drawing.Size(53, 17);
+            this.VStats.Size = new System.Drawing.Size(41, 13);
             this.VStats.TabIndex = 6;
             this.VStats.Text = "VStats:";
             this.VStats.Click += new System.EventHandler(this.VStats_Click);
             // 
             // Save
             // 
-            this.Save.Location = new System.Drawing.Point(1163, 298);
-            this.Save.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Save.Location = new System.Drawing.Point(872, 242);
             this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(111, 39);
+            this.Save.Size = new System.Drawing.Size(83, 32);
             this.Save.TabIndex = 7;
             this.Save.Text = "Save";
             this.Save.UseVisualStyleBackColor = true;
@@ -111,10 +92,9 @@
             // 
             // Load
             // 
-            this.Load.Location = new System.Drawing.Point(1163, 411);
-            this.Load.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Load.Location = new System.Drawing.Point(872, 334);
             this.Load.Name = "Load";
-            this.Load.Size = new System.Drawing.Size(111, 39);
+            this.Load.Size = new System.Drawing.Size(83, 32);
             this.Load.TabIndex = 8;
             this.Load.Text = "Load";
             this.Load.UseVisualStyleBackColor = true;
@@ -122,30 +102,27 @@
             // 
             // New_Game
             // 
-            this.New_Game.Location = new System.Drawing.Point(1163, 521);
-            this.New_Game.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.New_Game.Location = new System.Drawing.Point(872, 423);
             this.New_Game.Name = "New_Game";
-            this.New_Game.Size = new System.Drawing.Size(111, 39);
+            this.New_Game.Size = new System.Drawing.Size(83, 32);
             this.New_Game.TabIndex = 9;
+            this.New_Game.Tag = "";
             this.New_Game.Text = "New_Game";
             this.New_Game.UseVisualStyleBackColor = true;
             this.New_Game.Click += new System.EventHandler(this.New_Game_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1289, 575);
+            this.ClientSize = new System.Drawing.Size(967, 467);
             this.Controls.Add(this.New_Game);
             this.Controls.Add(this.Load);
             this.Controls.Add(this.Save);
             this.Controls.Add(this.VStats);
             this.Controls.Add(this.Stats);
-            this.Controls.Add(this.vTurn);
-            this.Controls.Add(this.hTurn);
             this.Controls.Add(this.Attack);
             this.Controls.Add(this.Display);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -157,8 +134,6 @@
 
         private System.Windows.Forms.TextBox Display;
         private System.Windows.Forms.Button Attack;
-        private System.Windows.Forms.Label hTurn;
-        private System.Windows.Forms.Label vTurn;
         private System.Windows.Forms.Label Stats;
         private System.Windows.Forms.Label VStats;
         private System.Windows.Forms.Button Save;
