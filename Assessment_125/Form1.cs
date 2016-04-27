@@ -16,65 +16,56 @@ namespace Assessment_125
     {
         SaveLoad<Unit> _SaveLoad = new SaveLoad<Unit>();
         Unit currentUser;
+        GameManager.GameManager game = GameManager.GameManager.stage;
+        List<Unit> stats = new List<Unit>();
 
         public Form1()
         {
             InitializeComponent();
             currentUser = new Unit("Ryan", 100, 100, 50, 1, 0);
+
+            foreach (Unit u in game) // is going to show the unit that i just created.
+            {
+                if (stats.Contains(u))
+                {
+                    stats.Remove(u);
+                }
+                stats.Add(u);
+            }
         }
-        
-        private void Display_TextChanged(object sender, EventArgs e)
+
+        private void Display_TextChanged(object sender, EventArgs e) // will show what is happening durring the game 
         {
             
         }
 
-        private void Attack_Click(object sender, EventArgs e)
+        private void Attack_Click(object sender, EventArgs e) //going to be the button that will tell the users character to attack.
         {
 
         }
 
-        private void Skip_Click(object sender, EventArgs e)
+        private void Stats_Click(object sender, EventArgs e) // will show the stats of the hero on screen.
         {
 
         }
 
-        private void hTurn_Click(object sender, EventArgs e)
+        private void VStats_Click(object sender, EventArgs e) // will show the villians stats on screen.
         {
 
         }
 
-        private void vTurn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Stats_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void VStats_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Save_Click(object sender, EventArgs e)
+        private void Save_Click(object sender, EventArgs e) // saves the current progress the user has.
         {
             _SaveLoad.Serialize("UserInfo", currentUser);
         }
 
-        private void Load_Click(object sender, EventArgs e)
+        private void Load_Click(object sender, EventArgs e) // loads a previous game
         {
             currentUser = _SaveLoad.Deserialize("UserInfo");
             
         }
 
-        private void New_Game_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Block_Click(object sender, EventArgs e)
+        private void New_Game_Click(object sender, EventArgs e) // will allow the user to create a new game
         {
 
         }

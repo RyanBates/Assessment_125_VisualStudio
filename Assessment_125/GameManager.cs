@@ -15,7 +15,18 @@ namespace GameManager
     [Serializable]
     [XmlSerializerAssembly]
     public class GameManager :  IGameManager
-    { 
+    {
+        static private GameManager _stage;
+        static public GameManager stage
+        {
+            get
+            {
+                if (_stage == null)
+                    _stage = new GameManager();
+                return _stage;
+            }
+        }
+
         public Party CreateParty(Party create, string type)
         {
             throw new NotImplementedException();

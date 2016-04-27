@@ -4,6 +4,7 @@ using GameManager;
 using Characteristics;
 using Finite_State_Machine;
 using System.Xml.Serialization;
+using System.IO;
 
 namespace Fight
 {
