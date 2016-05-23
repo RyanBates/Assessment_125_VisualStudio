@@ -48,13 +48,14 @@ namespace GameManager
             {
                 XmlSerializer serializser = new XmlSerializer(typeof(T));
                 serializser.Serialize(fs, t);
+                fs.Close();
             }
         }
 
         public T Deserialize(string s)
         {
             T t;
-            using (FileStream fs = File.OpenRead(Directory.GetCurrentDirectory() + "/" + s + ".xml"))
+            using (FileStream fs = File.OpenRead(s + ".xml"))
             {
                 XmlSerializer deserializer = new XmlSerializer(typeof(T));
                 t = (T)deserializer.Deserialize(fs);
