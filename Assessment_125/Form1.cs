@@ -44,15 +44,16 @@ namespace Assessment_125
 
         private void Save_Click(object sender, EventArgs e) // saves the current progress the user has.
         {
-            string path = Environment.CurrentDirectory + @"\UserInfo\";
-            Display.Text += ("Game Saved");
+            _SaveLoad.Serialize("UserInfo", currentUser);
+            Display.Text += ("Game Saved"); Display.Text = "";
         }
 
         private void Load_Click(object sender, EventArgs e) // loads a previous game
         {
             Display.Text = "";
-            string path = Environment.CurrentDirectory + @"\UserInfo\";
             UpdateDisplay();
+            currentUser = _SaveLoad.Deserialize("UserInfo");
+            Display.Text += ("Loaded");
         }
 
         private void Attack_Click(object sender, EventArgs e) //going to be the button that will tell the users character to attack.
@@ -63,7 +64,8 @@ namespace Assessment_125
         }
 
         private void New_Game_Click(object sender, EventArgs e) // will allow the user to create a new game
-        { 
+        {
+            Display.Text = "";
             currentUser = new Unit("Ryan", 100, 100, 50, 1, 0);
             UpdateDisplay();           
         }
